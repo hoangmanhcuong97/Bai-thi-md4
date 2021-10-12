@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List City</title>
+</head>
+<body>
+<h3>List City</h3>
+<body>
+<p align="center">
+    <a th:href="@{/city/create}">
+        Add City
+    </a>
+</p>
+<div style="size: 17px;color: red">
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+</div>
+<table id = "listCustomer" border="2px" width="70%">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Name City</th>
+        <th>Country</th>
+        <th>Area City</th>
+        <th>Population</th>
+        <th>GDP</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Detail</th>
+
+    </tr>
+    </thead>
+    <tbody align="center">
+    <tr th:each="city, cust : ${listCity}">
+        <td th:text="${cust.count}"></td>
+        <td th:text="${city.getName()}"></td>
+        <td th:text="${city.getCountry()}"></td>
+        <td th:text="${city.getAreaCity()}"></td>
+        <td th:text="${city.getPopulation()}"></td>
+        <td th:text="${city.getJpa()}"></td>
+        <td th:text="${city.getDescription()}"></td>
+        <td><a th:href="@{/city/{id}/edit(id=${city.getId()})}">Edit</a></td>
+        <td><a th:href="@{/city/{id}/delete(id=${city.getId()})}">Delete</a></td>
+        <td><a th:href="@{/city/{id}/detail(id=${city.getId()})}">Detail</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

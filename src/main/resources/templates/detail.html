@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>City detail</title>
+</head>
+<body>
+<div>
+    <h1>Xem thông tin thành phố <td th:text="${detailCity.name}"></td> </h1>
+    <a href="/city">Back to city list</a><br><br>
+</div>
+<div>
+    <fieldset style="width: 40%">
+        <legend>Information</legend>
+        <table>
+            <tr>
+                <td><lable>Name City:</lable></td>
+                <td th:text="${detailCity.name}"></td>
+            </tr>
+            <tr>
+                <td><lable>Country:</lable></td>
+                <td th:text="${detailCity.country}"></td>
+            </tr>
+            <tr>
+                <td><lable>Area City:</lable></td>
+                <td>
+                    <input type="text" th:field="${detailCity.areaCity}">
+                </td>
+            </tr>
+            <tr>
+                <td><lable>Population:</lable></td>
+                <td>
+                    <input type="text" th:field="${detailCity.population}">
+                </td>
+            </tr>
+            <tr>
+                <td><lable>GDP:</lable></td>
+                <td>
+                    <input type="text" th:field="${detailCity.jpa}">
+                </td>
+            </tr>
+            <tr>
+                <td><lable>Description:</lable></td>
+                <td>
+                    <input type="text" th:field="${detailCity.description}">
+                </td>
+            </tr>
+            <tr>
+        </table>
+    </fieldset>
+</div>
+</body>
+</html>
